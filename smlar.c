@@ -187,7 +187,7 @@ getAMProc(Oid amoid, Oid typid)
 static ProcTypeInfo *cacheProcs = NULL;
 static int nCacheProcs = 0;
 
-#ifndef TupleDescAttr
+#if PG_VERSION_NUM < 110000
 #define TupleDescAttr(tupdesc, i)	((tupdesc)->attrs[(i)])
 #endif
 
